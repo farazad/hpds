@@ -1,0 +1,6 @@
+fastapi==0.108.0
+uvicorn==0.25.0
+psutil==5.9.7 
+schedule==1.2.1
+# Swagger
+drf-yasg==1.21.7
