@@ -36,10 +36,10 @@ async def record_ram():
     return {"message": "RAM usage recorded successfully"}
 
 # API endpoint to get the last n records from the database
-@app.get("/get-last-records", response_model=List[dict])
+@app.get("/get-last-records/{n}", response_model=List[dict])
 async def get_last_records(n: int = 10):
     db, cursor = get_db()
-    cursor.execute('SELECT * FRramOM ram_usage ORDER BY timestamp DESC LIMIT ?', (n,))
+    cursor.execute('SELECT * FROM ram_usage ORDER BY timestamp DESC LIMIT ?', (n,))
     records = cursor.fetchall()
     db.close()
     result = [{"id": record[0], "used": record[1], "free": record[2], "total": record[3], "timestamp": record[4]} for record in records]
