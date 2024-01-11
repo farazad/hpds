@@ -4,5 +4,5 @@ psutil==5.9.7
 schedule==1.2.1
 pytest==7.4.4
 httpx==0.26.0
-# Swagger
-drf-yasg==1.21.7
+python-multipart==0.0.6
+aiofiles==23.2.1

@@ -5,8 +5,13 @@ import schedule
 import time
 from typing import List
 
-app = FastAPI()
-
+app = FastAPI(
+    title="RAM Monitor API",
+    description="API to monitor and record RAM usage",
+    version="1.0.0",
+    redoc_url=None,  # Disable ReDoc
+    docs_url="/swagger",  # Set the Swagger UI endpoint
+)
 # Function to create a new SQLite connection and cursor
 def get_db():
     db = sqlite3.connect('ram_data.db')
